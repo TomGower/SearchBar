@@ -1,5 +1,5 @@
 const mysql = require("mysql");
-const mysqlConfig = require("./config.js");
+const mysqlConfig = require("./Mattconfig.js");
 
 const connection = mysql.createConnection(mysqlConfig);
 

@@ -1,0 +1,16 @@
+config:
+  target: 'postgres://postgres:password@127.0.0.1:5432/sdcInfo'
+  phases:
+    - duration: 1
+      arrivalRate: 100
+  engines: 
+    { sql }
+
+scenarios:
+  - name: "Postgres Query"
+    engine: "sql"
+    flow:
+      - loop:
+          - query: "SELECT name FROM products WHERE name LIKE 'Intell%' LIMIT 10"
+          - think: 0.01  
+        count: 10000
